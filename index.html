@@ -7,10 +7,10 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      line-height: 1.7;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      background: #f4f7fb;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -18,11 +18,11 @@
     }
     .container {
       background: #fff;
-      padding: 25px;
-      max-width: 700px;
-      width: 90%;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      border-radius: 12px;
+      padding: 30px;
+      max-width: 750px;
+      width: 95%;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      border-radius: 14px;
     }
     .logo {
       text-align: center;
@@ -35,32 +35,52 @@
     h2 {
       text-align: center;
       color: #004a90;
-      margin-bottom: 15px;
+      font-size: 22px;
+      margin-bottom: 20px;
     }
     p {
-      margin-bottom: 15px;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 18px;
     }
     .timer {
-      margin-top: 20px;
+      margin-top: 25px;
       text-align: center;
       font-weight: bold;
-      font-size: 16px;
-      color: #d9534f;
+      font-size: 18px;
+      color: #004a90;
+    }
+    .progress-bar {
+      width: 100%;
+      background: #e6e6e6;
+      border-radius: 20px;
+      height: 16px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    .progress {
+      height: 100%;
+      width: 0;
+      background: #4CAF50;
+      transition: width 1s linear;
     }
     .signature {
-      margin-top: 30px;
-      font-size: 12px;
+      margin-top: 35px;
+      font-size: 13px;
       color: #555;
-      border-top: 1px solid #ddd;
+      border-top: 2px solid #004a90;
       padding-top: 15px;
+      line-height: 1.5;
     }
   </style>
   <script>
     let countdown = 30; // durée en secondes
     function startTimer() {
       const timerElement = document.getElementById("timer");
+      const progressElement = document.getElementById("progress");
       const interval = setInterval(() => {
         timerElement.textContent = "Redirection dans " + countdown + " secondes...";
+        progressElement.style.width = ((30 - countdown) / 30) * 100 + "%";
         countdown--;
         if (countdown < 0) {
           clearInterval(interval);
@@ -81,7 +101,9 @@
     <!-- Message principal -->
     <h2>Mise à jour de sécurité</h2>
     <p>
-      Chère cliente, cher client,<br><br>
+      Chère cliente, cher client,
+    </p>
+    <p>
       Dans le cadre de l’amélioration continue de nos services numériques, une mise à jour de sécurité est actuellement déployée progressivement par département.
     </p>
     <p>
@@ -93,10 +115,13 @@
     <p>
       Nous vous remercions de votre compréhension et restons à votre disposition pour toute question.
     </p>
-    <p>Bien cordialement,</p>
+    <p><strong>Bien cordialement,</strong></p>
 
     <!-- Timer -->
     <div class="timer" id="timer">Redirection dans 30 secondes...</div>
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
 
     <!-- Signature -->
     <div class="signature">
