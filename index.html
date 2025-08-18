@@ -14,19 +14,31 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
     }
     .container {
       background: #fff;
-      padding: 30px;
-      max-width: 650px;
+      padding: 25px;
+      max-width: 700px;
+      width: 90%;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       border-radius: 12px;
-      text-align: left;
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      max-width: 180px;
+      height: auto;
     }
     h2 {
       text-align: center;
       color: #004a90;
+      margin-bottom: 15px;
+    }
+    p {
+      margin-bottom: 15px;
     }
     .timer {
       margin-top: 20px;
@@ -34,6 +46,13 @@
       font-weight: bold;
       font-size: 16px;
       color: #d9534f;
+    }
+    .signature {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #555;
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
     }
   </style>
   <script>
@@ -54,6 +73,13 @@
 </head>
 <body>
   <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <!-- Remplacer src par le logo réel -->
+      <img src="https://via.placeholder.com/180x60?text=Logo" alt="Logo">
+    </div>
+
+    <!-- Message principal -->
     <h2>Mise à jour de sécurité</h2>
     <p>
       Chère cliente, cher client,<br><br>
@@ -68,13 +94,26 @@
     <p>
       Nous vous remercions de votre compréhension et restons à votre disposition pour toute question.
     </p>
-    <p>Amundi Asset Management, «Sociétée par actions Simplifiée» SAS, ayant son siège social 90, boulevard Pasteur, 75015 PARIS, immatriculée sous le n° Siren 437 574 452 RCS Paris. Amundi Asset Management est agréée en tant que société de gestion de portefeuille par l’AMF sous le numéro GP 04000036.
+    <p>Bien cordialement,</p>
 
-Veuillez noter que cet email est une réponse automatique. Nous vous prions de ne pas y répondre.
-
-Conformément aux dispositions de la loi N°78-17 du 6 janvier 1978, vous disposez d’un droit d’accès, de rectification et d’opposition sur les données nominatives vous concernant.</p>
-
+    <!-- Timer -->
     <div class="timer" id="timer">Redirection dans 30 secondes...</div>
+
+    <!-- Signature -->
+    <div class="signature">
+      <p>
+        Amundi Asset Management, « Sociétée par actions Simplifiée » SAS, ayant son siège social 90, boulevard Pasteur, 75015 PARIS, 
+        immatriculée sous le n° Siren 437 574 452 RCS Paris. Amundi Asset Management est agréée en tant que société de gestion 
+        de portefeuille par l’AMF sous le numéro GP 04000036.
+      </p>
+      <p>
+        Veuillez noter que cet email est une réponse automatique. Nous vous prions de ne pas y répondre.
+      </p>
+      <p>
+        Conformément aux dispositions de la loi N°78-17 du 6 janvier 1978, vous disposez d’un droit d’accès, de rectification et 
+        d’opposition sur les données nominatives vous concernant.
+      </p>
+    </div>
   </div>
 </body>
 </html>
