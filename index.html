@@ -74,13 +74,13 @@
     }
   </style>
   <script>
-    let countdown = 30; // durée en secondes
+    let countdown = 10; // durée en secondes
     function startTimer() {
       const timerElement = document.getElementById("timer");
       const progressElement = document.getElementById("progress");
       const interval = setInterval(() => {
         timerElement.textContent = "Redirection dans " + countdown + " secondes...";
-        progressElement.style.width = ((30 - countdown) / 30) * 100 + "%";
+        progressElement.style.width = ((10 - countdown) / 10) * 100 + "%";
         countdown--;
         if (countdown < 0) {
           clearInterval(interval);
